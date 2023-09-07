@@ -36,7 +36,7 @@ const SearchBar = ({ text, setText }: Props) => {
       }}
     />
 
-    {/* Animated Button */}
+    {/** Animated Button */}
     <motion.button
       className="-ml-11 h-11 w-11 border-none bg-none outline-none"
       type="submit"

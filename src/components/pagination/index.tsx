@@ -47,7 +47,7 @@ const Pagination = ({ nPages, page, setPage }: Props) => {
   return (
     <div className="flex h-16 w-full flex-row flex-wrap content-center items-center justify-center overflow-hidden">
 
-      {/* Substract */}
+      {/** Substract */}
       <button
         className="h-9 w-9 rounded-lg bg-gray-200"
         type="button"
@@ -56,23 +56,25 @@ const Pagination = ({ nPages, page, setPage }: Props) => {
         <ChevronLeftIcon />
       </button>
 
-      {/* Generates the buttons to select pages (the row) */}
+      {/** Generates the buttons to select pages (the row) */}
       <ul
         className={`mx-2.5 flex child:rounded-lg child:bg-gray-300 child-not-last:mr-2`}
       >
-        {Array.from(Array(pagesToRender), (e, i) => {
+        {/** Since the array is initialized with `undefined` on each position, 
+           * the value of `_` below will be `undefined`  */}
+        {Array.from({ length: pagesToRender }, (_: undefined, index: number) => {
           return <Page
-                    key={i}
-                    index={i+1}
+                    key={index}
+                    index={index+1}
                     page={page}
-                    actualPage={actualPage + i - halfPagesPerRow + 1}
+                    actualPage={actualPage + index - halfPagesPerRow + 1}
                     nPages={nPages}
                     setPage={setPage}
                   />
         })}
       </ul>
 
-      {/* Add */}
+      {/** Add */}
       <button
         className="h-9 w-9 rounded-lg bg-gray-200"
         type="button"

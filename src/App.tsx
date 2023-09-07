@@ -1,4 +1,4 @@
-import GithubProyects from "@/scenes/github";
+import GithubProyects from "@/components/github";
 
 function App() {
   return (

@@ -5,7 +5,12 @@ import path from "path"
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "https://vicen-te.github.io/search-github-user-repositories/",
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }]
   },
+  server: {
+    /// 5173 (default)
+    port: 3000,
+  }
 })

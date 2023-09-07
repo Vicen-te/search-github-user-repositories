@@ -6,13 +6,13 @@ import {
   HtmlGeneralGithubType,
 } from "@/shared/types";
 import Proyect from "./proyect";
-import SearchBar from "@/scenes/search-bar";
-import Pagination from "@/scenes/pagination";
+import SearchBar from "@/components/search-bar";
+import Pagination from "@/components/pagination";
 
-type Props = {};
+// type Props = {};props: Props
 const per_page: number = 20;
 
-const Github = (props: Props) => {
+const Github = () => {
   const [githubProyects, setGithubProyects] = useState<GithubProyectType[]>([]);
   const [user, setUser] = useState<string>("vicen-te");
   const [page, setPage] = useState<number>(1);
@@ -79,7 +79,7 @@ const Github = (props: Props) => {
         <SearchBar text={user} setText={setUser} />
       </div>
 
-      {githubProyects.map((item: GithubProyectType, index) => (
+      {githubProyects.map((item: GithubProyectType) => (
         <Proyect {...item} />
       ))}
 
